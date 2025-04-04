@@ -188,13 +188,18 @@ class PostType {
 			'isAlwaysAvailable' => 'ON',
 		);
 
-		$daysOfWeekWorking = $_POST['daysOfWeekWorking'];
+		$daysOfWeekWorking = isset( $_POST['daysOfWeekWorking'] ) ? $_POST['daysOfWeekWorking'] : array( 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' );
 
 		$new_account['daysOfWeekWorking'] = array_map(
 			function ( $day ) {
 				return array(
 					'isWorkingOnDay' => isset( $day['isWorkingOnDay'] ) ? 'ON' : 'OFF',
-					'workHours'      => $day['workHours'],
+					'workHours'      => isset( $day['workHours'] ) ? $day['workHours'] : array(
+						array(
+							'startTime' => '08:00',
+							'endTime'   => '17:30',
+						),
+					),
 				);
 			},
 			$daysOfWeekWorking

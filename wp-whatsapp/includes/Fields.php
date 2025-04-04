@@ -111,14 +111,10 @@ class Fields {
 	}
 
 	public static function getAnalyticsSetting() {
-		$option = get_option( 'nta_wa_analytics', array() );
-		return wp_parse_args(
-			$option,
-			array(
-				'enabledGoogle'    => 'OFF',
-				'enabledFacebook'  => 'OFF',
-				'enabledGoogleGA4' => 'OFF',
-			)
+		return array(
+			'enabledGoogle'    => 'OFF',
+			'enabledFacebook'  => 'OFF',
+			'enabledGoogleGA4' => 'OFF',
 		);
 	}
 

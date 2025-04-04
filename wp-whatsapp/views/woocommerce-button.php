@@ -66,7 +66,7 @@ use NTA_WhatsApp\Helper;
 			<th scope="row"><label for=""><?php echo esc_html__( 'Third party integrations (PRO)', 'wp-whatsapp' ); ?></label></th>
 			<td>
 				<div class="nta-wa-built-in-feature">
-					<div class="nta-wa-switch-control">
+					<div class="nta-wa-switch-control" style="pointer-events: none;">
 						<input class="njt-wa-pro" type="checkbox" id="nta-wa-dokan-enabled-switch" name="nta-wa-dokan-enabled-switch" <?php checked( 'OFF' ); ?>>
 						<label for="nta-wa-dokan-enabled-switch" class="green njt-wa-pro-tooltip"></label>
 					</div>

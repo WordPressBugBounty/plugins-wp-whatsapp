@@ -14,7 +14,7 @@ use NTA_WhatsApp\Helper;
 					<input type="text" class="widefat" id="number" name="number" value="<?php echo esc_attr( $meta['number'] ); ?>" autocomplete="off">
 				</p>
 				<p class="description">
-					<?php echo esc_html__( 'Refer to <a href="https://faq.whatsapp.com/en/general/21016748" target="_blank">https://faq.whatsapp.com/en/general/21016748</a> for a detailed explanation.', 'wp-whatsapp' ); ?>
+					<?php echo wp_kses_post( __( 'Refer to <a href="https://faq.whatsapp.com/en/general/21016748" target="_blank">https://faq.whatsapp.com/en/general/21016748</a> for a detailed explanation.', 'wp-whatsapp' ) ); ?>
 				</p>
 			</td>
 		</tr>
@@ -69,7 +69,7 @@ use NTA_WhatsApp\Helper;
 					?>
 				</p>
 				<?php endif; ?>
-				<table class="form-table time-available">
+				<table class="form-table time-available" style="pointer-events: none;">
 					<tbody>
 						<?php foreach ( $daysOfWeek as $dayKey ) : ?>
 							<?php foreach ( $meta['daysOfWeekWorking'][ $dayKey ]['workHours'] as $i => $workHour ) : ?>
