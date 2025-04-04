@@ -133,15 +133,6 @@
 				</div>
 			</td>
 		</tr>
-		<tr>
-			<th scope="row"><label for=""><?php echo esc_html__( 'Powered-by Label (PRO)', 'wp-whatsapp' ); ?></label></th>
-			<td>
-				<div class="nta-wa-switch-control" style="margin-top: 5px;">
-					<input class="njt-wa-pro" type="checkbox" id="isShowPoweredBy" name="isShowPoweredBy" <?php checked( $option['isShowPoweredBy'], 'ON' ); ?>>
-					<label for="isShowPoweredBy" class="green njt-wa-pro-tooltip"></label>
-				</div>
-			</td>
-		</tr>
 		<tr class="<?php echo esc_attr( 'ON' === $option['isShowScroll'] ? '' : 'hidden' ); ?>">
 			<th scope="row"><label for=""></label></th>
 			<td>

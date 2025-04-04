@@ -85,8 +85,6 @@ class Fields {
 				'scrollHeight'        => 500,
 				'isShowScroll'        => 'OFF',
 				'isShowResponseText'  => 'ON',
-				'isShowPoweredBy'     => 'ON',
-
 				'btnLabel'            => __( 'Need Help? <strong>Chat with us</strong>', 'wp-whatsapp' ),
 				'btnLabelWidth'       => 156,
 				'btnPosition'         => 'right',
