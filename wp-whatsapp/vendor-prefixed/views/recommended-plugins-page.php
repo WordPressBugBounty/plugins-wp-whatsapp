@@ -34,6 +34,17 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
     if ($is_active && !$is_update) {
         continue;
     }
+
+    $plugin_info_url = add_query_arg(
+    [
+        'tab'       => 'plugin-information',
+        'plugin'    => $plugin_slug,
+        'TB_iframe' => 'true',
+        'width'     => 600,
+        'height'    => 550,
+    ],
+        self_admin_url('plugin-install.php')
+    );
     ?>
     <div class="plugin-card plugin-card-<?php 
     echo \esc_attr($plugin_slug);
@@ -42,7 +53,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
             <div class="name column-name">
                 <h3>
                     <a href="<?php 
-    echo \esc_url($plugin_detail['download_link'] ?? '#');
+    echo \esc_url($plugin_info_url);
     ?>" class="thickbox open-plugin-details-modal">
                         <?php 
     echo \esc_html($plugin_detail['name']);

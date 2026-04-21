@@ -4,7 +4,7 @@ Donate link: https://1.envato.market/WP-WhatsApp
 Tags: whatsapp, whatsapp chat, woocommerce whatsapp, click to chat, whatsapp business
 Requires at least: 3.0
 Tested up to: 6.9
-Stable tag: 3.7.4
+Stable tag: 3.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,11 +129,10 @@ Definitely yes! You can enable built-in GDPR cookie notice checkbox so that the 
 Yes, You can use translation plugins like [WPML](https://ninjateam.gitbook.io/whatsapp-for-wordpress/integrations/wpml) to translate any languages on your site easily and quickly.
 
 = I have some issues. How can I find help? =
-Check out our [tutorial](https://ninjateam.org/wordpress-whatsapp-chat-tutorial/) to see all the setup guide. 
-Wanna get in touch? Drop us an email or message [here](https://ninjateam.org/support/).
+Just [drop us an email or message here](https://ninjateam.org/support/?utm_source=wp-org&utm_medium=whatsapp).
 
 = Should I buy the premium WhatsApp plugin? =
-Definitely yes! The pro version comes with cutting-edge features and performance. Backed by VIP chat support, you will get it done in no time. [Go pro today](https://1.envato.market/WP-WhatsApp) with one-time payment and lifetime updates!
+Definitely yes! The pro version comes with cutting-edge features and better performance. [Upgrade today](https://1.envato.market/WP-WhatsApp) with one-time payment and lifetime updates!
 
 == Screenshots ==
 1. Allows you to integrate your WhatsApp experience directly into your WordPress website
@@ -141,6 +140,9 @@ Definitely yes! The pro version comes with cutting-edge features and performance
 3. WhatsApp Gutenberg Block Demo
 
 == Changelog ==
+
+= Apr 21, 2026 - Version 3.8.0 =
+- Improved: "View details" of Recommended plugins
 
 = Apr 21, 2026 - Version 3.7.4 =
 - Updated: Recommended plugins page using admin shell
