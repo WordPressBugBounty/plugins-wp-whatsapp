@@ -4,7 +4,7 @@
  * Plugin Name:       WP Chat App
  * Plugin URI:        https://ninjateam.org/whatsapp-chat-wordpress/
  * Description:       Integrate your WhatsApp experience directly into your website. This is one of the best way to connect and interact with your customer.
- * Version:           3.7.3
+ * Version:           3.7.4
  * Author:            NinjaTeam
  * Author URI:        https://ninjateam.org
  * Text Domain:       wp-whatsapp
@@ -26,7 +26,7 @@ if ( function_exists( 'NTA_WhatsApp\\init' ) ) {
 }
 
 if ( ! defined( 'NTA_WHATSAPP_VERSION' ) ) {
-	define( 'NTA_WHATSAPP_VERSION', '3.7.3' );
+	define( 'NTA_WHATSAPP_VERSION', '3.7.4' );
 }
 
 if ( ! defined( 'NTA_WHATSAPP_PLUGIN_URL' ) ) {
@@ -72,9 +72,26 @@ if ( file_exists( __DIR__ . '/includes/Cross.php' ) ) {
 	require_once __DIR__ . '/includes/Cross.php';
 }
 
-if ( file_exists( __DIR__ . '/includes/Recommended/Recommended.php' ) ) {
-	require_once __DIR__ . '/includes/Recommended/Recommended.php';
-}
+require_once __DIR__ . '/vendor/autoload.php';
+
+spl_autoload_register(function ( $class ) {
+	$prefix   = 'WhatsappScoped\\YayCommerce\\AdminShell\\';
+	$base_dir = __DIR__ . '/vendor-prefixed/src/';
+	$len      = strlen( $prefix );
+	if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+		return;
+	}
+	$file = $base_dir . str_replace( '\\', '/', substr( $class, $len ) ) . '.php';
+	if ( file_exists( $file ) ) {
+		require $file;
+	}
+});
+
+require_once __DIR__ . '/WhatsappPluginAdapter.php';
+
+add_action( 'plugins_loaded', function() {
+	( new \WhatsappPluginAdapter() )->init();
+}, 5 );
 
 if ( ! function_exists( 'NTA_WhatsApp\\init' ) ) {
 	function init() {

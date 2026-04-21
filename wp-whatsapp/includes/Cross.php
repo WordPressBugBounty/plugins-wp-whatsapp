@@ -74,7 +74,7 @@ if ( ! class_exists( 'NjtCross' ) ) {
 		}
 
 		public function need_update_option() {
-			$time = time() + ( 1 * 60 * 60 * 24 ); //1 day
+			$time = 5 * 60;
 			update_option( "njt_popup_{$this->pluginPrefix}_cross", $time );
 			update_option( "njt_notification_{$this->pluginPrefix}_cross", $time );
 		}

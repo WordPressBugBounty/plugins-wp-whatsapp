@@ -84,8 +84,9 @@ jQuery(document).ready(function () {
       }
     });
   })
-  jQuery('.fbv-cross-install:not(.fbv_installing)').click(function (e) {
+  jQuery('.fbv-cross-install').click(function (e) {
     e.preventDefault()
+    if (jQuery(this).hasClass('fbv_installing')) return
     const normal = '<i class="dashicons dashicons-wordpress-alt"></i>Install for free'
     const loading = '<i class="dashicons dashicons-update-alt"></i>Installing<span class="text-dots"><span>.<span></span>'
     const done = '<i class="dashicons dashicons-saved"></i>Installed! Organize files now'

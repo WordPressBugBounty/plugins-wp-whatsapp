@@ -7,6 +7,8 @@ class WPML {
 
 	protected static $instance = null;
 
+	protected $isActive = false;
+
 	public static function getInstance() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();

@@ -228,7 +228,7 @@ class PostType {
 			)
 		);
 
-		$isSaveNewPost = Helper::isSaveNewPost( sanitize_text_field( $_POST['_wp_http_referer'] ) );
+		$isSaveNewPost = Helper::isSaveNewPost( isset( $_POST['_wp_http_referer'] ) ? sanitize_text_field( $_POST['_wp_http_referer'] ) : '' );
 		if ( $isSaveNewPost ) {
 			update_post_meta( $post_id, 'nta_wa_widget_show', 'OFF' );
 			update_post_meta( $post_id, 'nta_wa_widget_position', 0 );
@@ -245,7 +245,12 @@ class PostType {
 		if ( $screen->action === 'add' ) {
 			$meta = Fields::getDefaultMetaAccount( $daysOfWeek );
 		} else {
-			$meta                           = get_post_meta( $post->ID, 'nta_wa_account_info', true );
+			$meta = get_post_meta( $post->ID, 'nta_wa_account_info', true );
+
+			if ( ! is_array( $meta ) ) {
+				$meta = array();
+			}
+			
 			$meta['nta_wa_widget_show']     = get_post_meta( $post->ID, 'nta_wa_widget_show', true );
 			$meta['nta_wa_widget_position'] = get_post_meta( $post->ID, 'nta_wa_widget_position', true );
 			$meta['nta_wa_wc_show']         = get_post_meta( $post->ID, 'nta_wa_wc_show', true );

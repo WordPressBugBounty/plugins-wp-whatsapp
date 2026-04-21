@@ -3,8 +3,8 @@ Contributors: ninjateam
 Donate link: https://1.envato.market/WP-WhatsApp
 Tags: whatsapp, whatsapp chat, woocommerce whatsapp, click to chat, whatsapp business
 Requires at least: 3.0
-Tested up to: 6.8
-Stable tag: 3.7.3
+Tested up to: 6.9
+Stable tag: 3.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,13 +12,15 @@ Integrate WhatsApp experience directly into your WordPress website.
 
 == Description ==
 
-WhatsApp Chat plugin for WordPress allows you to add a WhatsApp floating button, stationary button, widget, and web beacon to your website. 
+WhatsApp Chat for WordPress and WooCommerce brings your customer conversations to the platform your audience already uses every day.
 
-[DEMO](https://demo.ninjateam.org/whatsapp-chat-wordpress/) | [GO PRO](https://1.envato.market/WP-WhatsApp) 💎
+Add a floating button, widget, or web beacon to your site and give shoppers a direct line to your team. Perfect for support, order discount, presales, usage questions, or anything in between. 
 
-It's easy to set up and works seamlessly with all cache plugins.
+[QUICK DEMO](https://demo.ninjateam.org/whatsapp-chat-wordpress/) | [GO PRO](https://1.envato.market/WP-WhatsApp) 💎
 
-You're free to add **multiple** customer service agents, sales reps, technical support, and more.
+Pair it with YayReviews to follow up with buyers on WhatsApp and collect more [authentic reviews](https://wordpress.org/plugins/yay-customer-reviews-woocommerce/), turning every completed order into a growth opportunity.
+
+**Multiple agents**, zero complicated setup, and full compatibility with all cache plugins.
 
 [DOCUMENTATION](https://ninjateam.gitbook.io/whatsapp-for-wordpress/)
 
@@ -30,6 +32,7 @@ This is the best way to connect and interact with your audience. Via the WP What
 
 **WhatsApp Floating Widget**
 Show WhatsApp chat widget on selected pages or all pages' corners.
+
 - Agent name
 - Agent title
 - Custom color & greetings
@@ -39,18 +42,21 @@ Show WhatsApp chat widget on selected pages or all pages' corners.
 
 **WooCommerce WhatsApp Button**
 Add Order on WhatsApp button on WooCommerce product pages.
+
 - Choose a specific agent/expert for products
 - Display WooCommerce WhatsApp button after 'Add to cart'
 - Display before 'Add to cart', after long description or short description (PRO)
 
 **In-post/page WhatsApp Button with shortcode**
+
 - Unlimited display
 - Choose a specific agent/expert to fit page/post content
 - Optimize audience engagement
 
 **Event Tracking**
+
 - Google Analytics (PRO)
-- Google Tag Manager and [Google Analytics 4](https://ninjateam.org/whatsapp-chat-event-tracking-in-google-analytics-4-google-tag-manager/) (PRO)
+- Google Tag Manager and [Google Analytics 4](https://ninjateam.org/whatsapp-chat-event-tracking-in-google-analytics-4-google-tag-manager/?utm_source=wp-org&utm_medium=whatsapp) (PRO)
 - Facebook Pixel (PRO)
 
 ### WHY USE WHATSAPP FOR WORDPRESS?
@@ -94,7 +100,7 @@ The visitor also knows when you/your agents back to work in the exact **remainin
 
 WP Chat App plugin has been developed to be compatible with the most popular WordPress page builders, themes and plugins. 
 
-It's perfect to combine WhatsApp customer support plugin with [WooCommerce plugins](https://yaycommerce.com/) or [FileBird](https://ninjateam.org/wordpress-media-library-folders/).
+It's perfect to combine WhatsApp customer support plugin with [WooCommerce plugins](https://yaycommerce.com/?utm_source=wp-org&utm_medium=whatsapp).
 
 ###🤟 ADS TIPS AND TRICKS
 - This plugin works seamlessly with [WhatsApp Business App](https://www.whatsapp.com/business/).
@@ -135,6 +141,11 @@ Definitely yes! The pro version comes with cutting-edge features and performance
 3. WhatsApp Gutenberg Block Demo
 
 == Changelog ==
+
+= Apr 21, 2026 - Version 3.7.4 =
+- Updated: Recommended plugins page using admin shell
+- Fixed: Disable FileBird cross action when doing ajax
+
 
 = Jun 18, 2025 - Version 3.7.3 =
 - Fixed: Error "Always available online" option when switching from Free version to Pro version

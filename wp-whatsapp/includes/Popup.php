@@ -64,6 +64,13 @@ class Popup {
 			return false;
 		}
 
+		// Prevents display of the popup in Bricks Builder main builder interface.
+		if ( function_exists( 'bricks_is_builder' ) && bricks_is_builder() ) {
+			if ( function_exists( 'bricks_is_builder_main' ) && bricks_is_builder_main() ) {
+				return false;
+			}
+		}
+
 		return true;
 	}
 

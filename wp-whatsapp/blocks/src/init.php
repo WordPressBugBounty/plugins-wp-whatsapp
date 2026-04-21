@@ -142,7 +142,7 @@ function njt_wa_button_render($attributes)
 
 function njt_wa_assets()
 {
-	wp_enqueue_style('nta-css-popup', NTA_WHATSAPP_PLUGIN_URL . 'assets/dist/css/style.css');
+	wp_enqueue_style('nta-css-popup', NTA_WHATSAPP_PLUGIN_URL . 'assets/dist/css/style.css', array(), NTA_WHATSAPP_VERSION );
 }
 
 // Hook: Block assets.
