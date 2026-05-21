@@ -486,19 +486,5 @@ if ( ! class_exists( 'NjtCross' ) ) {
 	}
 }
 
-if ( ! class_exists( 'FileBirdCross' ) ) {
-	class FileBirdCross extends NjtCross {
-		public function is_plugin_exist() {
-			return (
-				defined( 'NJT_FILEBIRD_VERSION' ) ||
-				defined( 'NJFB_VERSION' ) ||
-				parent::is_plugin_exist()
-			);
-		}
-	}
-
-	FileBirdCross::get_instance( 'filebird', 'filebird+ninjateam', NTA_WHATSAPP_PLUGIN_URL, array( 'filebird/filebird.php', 'filebird-pro/filebird.php' ) );
-}
-
 
 
