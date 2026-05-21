@@ -114,7 +114,7 @@ class LicenseHandler
     public function not_activate_license_notice() : void
     {
         $current_screen = get_current_screen();
-        if (isset($current_screen->id) && 'yaycommerce_page_yaycommerce-licenses' === $current_screen->id) {
+        if (!$current_screen || $current_screen->id !== 'plugins') {
             return;
         }
         if ($this->license->is_active()) {

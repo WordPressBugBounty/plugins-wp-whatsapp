@@ -29,7 +29,7 @@ use WhatsappScoped\YayCommerce\AdminShell\Support\Constants;
 class AdminShell
 {
     /** Package version — used for cross-scope version election. */
-    const VERSION = '2.5.4';
+    const VERSION = '2.6.1';
     private static ?self $instance = null;
     private static bool $booted = \false;
     private static array $enabled_slugs = [];
@@ -76,9 +76,12 @@ class AdminShell
         // On AJAX requests admin_menu doesn't fire, so register AJAX handlers directly.
         // Global guard ensures only one scoped copy registers (action name is identical across copies).
         // DOING_AJAX must be in scoper.inc.php exclude-constants to avoid namespace prefixing.
-        if (\defined('DOING_AJAX') && \DOING_AJAX && !isset($GLOBALS['yaycommerce_ajax_handlers_registered'])) {
-            $GLOBALS['yaycommerce_ajax_handlers_registered'] = \true;
-            RecommendedPluginsPage::get_instance();
+        if (\defined('DOING_AJAX') && \DOING_AJAX) {
+            $registered_ver = $GLOBALS['yaycommerce_ajax_handlers_registered'] ?? '0.0.0';
+            if (\version_compare(self::VERSION, $registered_ver, '>')) {
+                $GLOBALS['yaycommerce_ajax_handlers_registered'] = self::VERSION;
+                RecommendedPluginsPage::get_instance();
+            }
         }
         \do_action('yaycommerce_admin_shell_booted', $instance);
     }

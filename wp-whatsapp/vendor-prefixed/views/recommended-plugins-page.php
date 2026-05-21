@@ -22,7 +22,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
     $install_status = install_plugin_install_status((object) ['slug' => $plugin_slug, 'version' => $plugin_detail['version']]);
     $status = $install_status['status'] ?? 'not_installed';
     $exist_pro_ver = $page_instance->check_pro_version_exists($plugin_detail);
-    $is_installed = \in_array($status, ['latest_installed', 'newer_installed'], \true);
+    $is_installed = \in_array($status, ['latest_installed', 'newer_installed'], \true) || $exist_pro_ver;
     $is_active = 'active' === $status || $exist_pro_ver && is_plugin_active($exist_pro_ver) || $is_installed && is_plugin_active($install_status['file']);
     $is_update = 'update_available' === $status;
     // Hide CF7 add-ons when Contact Form 7 itself is not active
@@ -34,17 +34,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
     if ($is_active && !$is_update) {
         continue;
     }
-
-    $plugin_info_url = add_query_arg(
-    [
-        'tab'       => 'plugin-information',
-        'plugin'    => $plugin_slug,
-        'TB_iframe' => 'true',
-        'width'     => 600,
-        'height'    => 550,
-    ],
-        self_admin_url('plugin-install.php')
-    );
+    $plugin_info_url = \add_query_arg(['tab' => 'plugin-information', 'plugin' => $plugin_slug, 'TB_iframe' => 'true', 'width' => 600, 'height' => 550], \self_admin_url('plugin-install.php'));
     ?>
     <div class="plugin-card plugin-card-<?php 
     echo \esc_attr($plugin_slug);
@@ -79,7 +69,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
         \esc_html_e('Status:', 'yaycommerce');
         ?>
                     <span class="plugin-status-active" data-plugin-file="<?php 
-        echo \esc_attr($install_status['file'] ?? '');
+        echo \esc_attr($exist_pro_ver ?? $install_status['file'] ?? '');
         ?>"><?php 
         \esc_html_e('Active', 'yaycommerce');
         ?></span>
@@ -90,7 +80,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
         \esc_html_e('Status:', 'yaycommerce');
         ?>
                     <span class="plugin-status-inactive" data-plugin-file="<?php 
-        echo \esc_attr($install_status['file'] ?? '');
+        echo \esc_attr($exist_pro_ver ?? $install_status['file'] ?? '');
         ?>"><?php 
         \esc_html_e('Inactive', 'yaycommerce');
         ?></span>
@@ -130,7 +120,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
     } elseif ($is_installed) {
         ?>
                         <li><button class="button activate-now" data-plugin-file="<?php 
-        echo \esc_attr($install_status['file'] ?? '');
+        echo \esc_attr($exist_pro_ver ?? $install_status['file'] ?? '');
         ?>"><?php 
         \esc_html_e('Activate', 'yaycommerce');
         ?></button></li>
@@ -138,7 +128,7 @@ foreach ($recommended_plugins as $key => $plugin_detail) {
     } elseif ($is_update) {
         ?>
                         <li><button class="button update-now" data-plugin="<?php 
-        echo \esc_attr($install_status['file'] ?? '');
+        echo \esc_attr($exist_pro_ver ?? $install_status['file'] ?? '');
         ?>"><?php 
         \esc_html_e('Update Now', 'yaycommerce');
         ?></button></li>

@@ -83,6 +83,8 @@ function activatePlugin(element, file) {
 }
 
 function installPlugin(element, plugin) {
+  var otherButtons = jQuery('.yay-recommended-plugins-layout .plugin-action-buttons .install-now').not(element);
+  otherButtons.prop('disabled', true).addClass('button-disabled');
   element.removeClass('button-primary').addClass('updating-message').text('Installing...');
   jQuery.ajax({
     url: yayRecommended.admin_ajax,
@@ -99,6 +101,11 @@ function installPlugin(element, plugin) {
       } else {
         element.removeClass('updating-message').addClass('button-primary').text('Install Now');
       }
+      otherButtons.prop('disabled', false).removeClass('button-disabled');
+    },
+    error: function () {
+      element.removeClass('updating-message').addClass('button-primary').text('Install Now');
+      otherButtons.prop('disabled', false).removeClass('button-disabled');
     },
   });
 }

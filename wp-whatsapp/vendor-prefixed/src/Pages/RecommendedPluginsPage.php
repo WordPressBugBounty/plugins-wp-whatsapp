@@ -24,9 +24,9 @@ class RecommendedPluginsPage
     }
     protected function __construct()
     {
-        add_action('wp_ajax_yay_recommended_get_plugin_data', [$this, 'ajax_get_plugin_data']);
-        add_action('wp_ajax_yay_recommended_activate_plugin', [$this, 'ajax_activate_plugin']);
-        add_action('wp_ajax_yay_recommended_upgrade_plugin', [$this, 'ajax_upgrade_plugin']);
+        add_action('wp_ajax_yay_recommended_get_plugin_data', [$this, 'ajax_get_plugin_data'], 9);
+        add_action('wp_ajax_yay_recommended_activate_plugin', [$this, 'ajax_activate_plugin'], 9);
+        add_action('wp_ajax_yay_recommended_upgrade_plugin', [$this, 'ajax_upgrade_plugin'], 9);
     }
     public static function render() : void
     {

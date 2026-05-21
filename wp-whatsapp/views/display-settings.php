@@ -102,4 +102,4 @@
 		</tr>
 	</tbody>
 </table>
-<button class="button button-large button-primary wa-save"><?php echo esc_html__( 'Save Changes', 'wp-whatsapp' ); ?><span></span></button>
+<button class="button button-large button-primary wa-save"><?php echo esc_html__( 'Save Changes', 'wp-whatsapp' ); ?></button>

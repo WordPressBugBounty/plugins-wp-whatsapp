@@ -3,8 +3,8 @@ Contributors: ninjateam
 Donate link: https://1.envato.market/WP-WhatsApp
 Tags: whatsapp, whatsapp chat, woocommerce whatsapp, click to chat, whatsapp business
 Requires at least: 3.0
-Tested up to: 6.9
-Stable tag: 3.8.0
+Tested up to: 7.0
+Stable tag: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,15 +14,17 @@ Integrate WhatsApp experience directly into your WordPress website.
 
 WhatsApp Chat for WordPress and WooCommerce brings your customer conversations to the platform your audience already uses every day.
 
-Add a floating button, widget, or web beacon to your site and give shoppers a direct line to your team. Perfect for support, order discount, presales, usage questions, or anything in between. 
+Add a floating button, widget, or web beacon to your site and give shoppers a direct line to your team. 
 
-[QUICK DEMO](https://demo.ninjateam.org/whatsapp-chat-wordpress/) | [GO PRO](https://1.envato.market/WP-WhatsApp) 💎
+Perfect for support, order discount, presales, usage questions, or anything in between. 
 
-Pair it with YayReviews to follow up with buyers on WhatsApp and collect more [authentic reviews](https://wordpress.org/plugins/yay-customer-reviews-woocommerce/), turning every completed order into a growth opportunity.
+**[Quick Demo](https://demo.ninjateam.org/whatsapp-chat-wordpress/)** | **[Go Pro](https://1.envato.market/WP-WhatsApp)** 💎
+
+Pair it with YayReviews for WooCommerce to follow up with buyers on WhatsApp and [collect more authentic reviews](https://wordpress.org/plugins/yay-customer-reviews-woocommerce/), turning every completed order into a growth opportunity.
 
 **Multiple agents**, zero complicated setup, and full compatibility with all cache plugins.
 
-[DOCUMENTATION](https://ninjateam.gitbook.io/whatsapp-for-wordpress/)
+[Documentation](https://ninjateam.gitbook.io/whatsapp-for-wordpress/)
 
 [youtube https://www.youtube.com/watch?v=7YNIHLtiNo4]
 
@@ -141,13 +143,15 @@ Definitely yes! The pro version comes with cutting-edge features and better perf
 
 == Changelog ==
 
+= May 21, 2026 - Version 3.8.1 =
+- Improved: Compatible with WP 7.0
+
 = Apr 21, 2026 - Version 3.8.0 =
 - Improved: "View details" of Recommended plugins
 
 = Apr 21, 2026 - Version 3.7.4 =
 - Updated: Recommended plugins page using admin shell
 - Fixed: Disable FileBird cross action when doing ajax
-
 
 = Jun 18, 2025 - Version 3.7.3 =
 - Fixed: Error "Always available online" option when switching from Free version to Pro version

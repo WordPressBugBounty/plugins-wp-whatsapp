@@ -331,11 +331,16 @@ ul.nta-tab-wrapper .nav-tab {
 }
 
 .wa-save-loading {
+  line-height: 1 !important;
   animation: rotation 2s infinite linear;
 }
 
-.wa-save .wa-save-loading {
-  margin: 5px 0 0 5px;
+.wa-save {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 /* Meta button styles */

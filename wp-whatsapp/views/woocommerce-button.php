@@ -76,7 +76,7 @@ use NTA_WhatsApp\Helper;
 		</tr>
 	</tbody>
 </table>
-<button class="button button-large button-primary wa-save"><?php echo esc_html__( 'Save Changes', 'wp-whatsapp' ); ?><span></span></button>
+<button class="button button-large button-primary wa-save"><?php echo esc_html__( 'Save Changes', 'wp-whatsapp' ); ?></button>
 
 <script type="text/template" id="selectedAccountTemplate">
 	<div class="search-account">

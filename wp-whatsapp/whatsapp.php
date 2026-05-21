@@ -4,7 +4,7 @@
  * Plugin Name:       WP Chat App
  * Plugin URI:        https://ninjateam.org/whatsapp-chat-wordpress/
  * Description:       Integrate your WhatsApp experience directly into your website. This is one of the best way to connect and interact with your customer.
- * Version:           3.8.0
+ * Version:           3.8.1
  * Author:            NinjaTeam
  * Author URI:        https://ninjateam.org
  * Text Domain:       wp-whatsapp
@@ -26,7 +26,7 @@ if ( function_exists( 'NTA_WhatsApp\\init' ) ) {
 }
 
 if ( ! defined( 'NTA_WHATSAPP_VERSION' ) ) {
-	define( 'NTA_WHATSAPP_VERSION', '3.8.0' );
+	define( 'NTA_WHATSAPP_VERSION', '3.8.1' );
 }
 
 if ( ! defined( 'NTA_WHATSAPP_PLUGIN_URL' ) ) {
@@ -39,6 +39,11 @@ if ( ! defined( 'NTA_WHATSAPP_PLUGIN_DIR' ) ) {
 
 if ( ! defined( 'NTA_WHATSAPP_BASE_NAME' ) ) {
 	define( 'NTA_WHATSAPP_BASE_NAME', plugin_basename( __FILE__ ) );
+}
+
+// Cross-sell module loader (gracefully no-op if cross-sell/ hasn't been synced yet).
+if ( file_exists( __DIR__ . '/cross-sell/loader.php' ) ) {
+	require_once __DIR__ . '/cross-sell/loader.php';
 }
 
 spl_autoload_register(
@@ -66,10 +71,6 @@ spl_autoload_register(
 
 if ( file_exists( __DIR__ . '/includes/Review.php' ) ) {
 	require_once __DIR__ . '/includes/Review.php';
-}
-
-if ( file_exists( __DIR__ . '/includes/Cross.php' ) ) {
-	require_once __DIR__ . '/includes/Cross.php';
 }
 
 require_once __DIR__ . '/vendor/autoload.php';

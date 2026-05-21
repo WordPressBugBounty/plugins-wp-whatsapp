@@ -23,4 +23,4 @@ global $wp_roles;
 		</tr>
 	</tbody>
 </table>
-<button class="button button-large button-primary wa-save"><span class="wa-save-text"><?php esc_html_e( 'Save Changes', 'wp-whatsapp' ); ?><span></span></span></button>
+<button class="button button-large button-primary wa-save"><span class="wa-save-text"><?php esc_html_e( 'Save Changes', 'wp-whatsapp' ); ?></span></button>

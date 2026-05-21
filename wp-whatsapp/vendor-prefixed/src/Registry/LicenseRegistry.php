@@ -16,7 +16,7 @@ class LicenseRegistry
     /**
      * Register a plugin's license info. Applies the decoration filter before storing.
      */
-    public function register(PluginLicenseInfo $info) : void
+    public function register($info) : void
     {
         /** @var PluginLicenseInfo $info */
         $info = \apply_filters('yaycommerce_admin_shell_plugin_info', $info, $info->slug);
@@ -29,7 +29,18 @@ class LicenseRegistry
      */
     public function all() : array
     {
-        return $this->plugins;
+        // Refactor old licensing plugin integration
+        $old_plugins = [];
+        $handlers = ['WhatsappScoped\\YAYDP\\License\\License_Handler', 'WhatsappScoped\\YayMail\\License\\LicenseHandler', 'WhatsappScoped\\Yay_Currency\\License\\LicenseHandler', 'WhatsappScoped\\Yay_Swatches\\License\\LicenseHandler', 'WhatsappScoped\\YayExtra\\License\\LicenseHandler', 'WhatsappScoped\\YayRev\\License\\LicenseHandler', 'WhatsappScoped\\YayWholesaleB2B\\License\\LicenseHandler', 'WhatsappScoped\\YaySMTP\\License\\LicenseHandler'];
+        foreach ($handlers as $handler) {
+            if (\class_exists($handler) && \method_exists($handler, 'get_licensing_plugins')) {
+                $plugins = $handler::get_licensing_plugins();
+                if (\is_array($plugins)) {
+                    $old_plugins = \array_merge($old_plugins, $plugins);
+                }
+            }
+        }
+        return \array_merge($this->plugins, $old_plugins);
     }
     /**
      * Return a single PluginLicenseInfo by slug, or null if not registered.
